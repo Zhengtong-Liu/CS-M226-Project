@@ -1,4 +1,4 @@
-# Biologically Annoted Nerual Networks (BANNs)
+# Biologically Annoted Neural Networks (BANNs)
 
 **BANNs** are a class of feedforward Bayesian models with partially connected architectures that are guided by predefined SNP-set annotations.
  
