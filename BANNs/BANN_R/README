@@ -1,0 +1,9 @@
+Dependencies:
+R >= 3.6.1
+
+Installation:
+1. Unzip the BANN.zip
+2. cd into the BANN directory and install the package with "R CMD INSTALL BANN_0.1.0.tar.gz"
+
+Example:
+For usage, please follow the BANN_example.R code to see how to run BANN with the toy dataset provided.
