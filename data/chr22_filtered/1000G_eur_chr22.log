@@ -1,0 +1,26 @@
+PLINK v1.90b6.24 64-bit (6 Jun 2021)
+Options in effect:
+  --bfile chr22_filtered/1000G_eur_chr22
+  --out chr22_filtered/1000G_eur_chr22
+  --recode
+
+Hostname: login1
+Working directory: /u/project/sriram/zhengton/CS-M226-Project/data
+Start time: Sun Nov 27 22:31:13 2022
+
+Random number seed: 1669617073
+48300 MB RAM detected; reserving 24150 MB for main workspace.
+Allocated 3222 MB successfully, after larger attempt(s) failed.
+926 variants loaded from .bim file.
+378 people (0 males, 0 females, 378 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to chr22_filtered/1000G_eur_chr22.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 378 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is exactly 1.
+926 variants and 378 people pass filters and QC.
+Note: No phenotypes present.
+--recode ped to chr22_filtered/1000G_eur_chr22.ped +
+chr22_filtered/1000G_eur_chr22.map ... done.
+
+End time: Sun Nov 27 22:31:13 2022
