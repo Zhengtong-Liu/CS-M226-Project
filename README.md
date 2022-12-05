@@ -2,9 +2,10 @@
 
 This is the repo documenting the project Non-linear Genetic Effects for Complex Traits.
 
-Group Members: Yu-Wei Chen, Zhengtong Liu, Jacob Wallin.
+### Group Members: 
+  Yu-Wei Chen, Zhengtong Liu, Jacob Wallin
 
-Main work:
+### Main work:
 * Study Variational Inference for the Polygenetic Risk Scores models (Bayesian Networks, Spike and Slab Priors, Evidence Lower Bound, etc.);
 * Modify the Biologically Annotated Neural Networks (BANNs) architecture to capture non-linear genetic effects within genes;
 * Compare BANNs with Variational Inference of Polygenic Risk Scores;
