@@ -1,6 +1,6 @@
-# CS-M226-Project
+## CS M226: Machine Learning for Bioinformatics
 
-This is the repo documenting the project Non-linear Genetic Effects for Complex Traits.
+This is the repo documenting the project **Non-linear Genetic Effects for Complex Traits**.
 
 ### Group Members: 
   Yu-Wei Chen, Zhengtong Liu, Jacob Wallin
