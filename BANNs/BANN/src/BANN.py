@@ -180,7 +180,7 @@ class BANNs(object):
 		if nonlinear_flag:
 			self.residue = self.y - np.matmul(self.G, self.SET_layer.pip)
 			self.W = []
-			
+			self.num_nonlinear_relations = []
 			print("constructing kernelized features...")
 			progbar = tf.keras.utils.Progbar(self.mask.shape[1])
 			if self.epi_p:
@@ -189,14 +189,15 @@ class BANNs(object):
 
 					selected_X = self.X[:, indices]
 					if (len(indices) <= 1):
-						self.W.append(selected_X)
+						new_nonlinear_relation = selected_X
 					else:
 						all_combs = np.array(list(itertools.combinations(np.arange(selected_X.shape[1]), 2)))
 						selected_comb_num = np.max([np.min([int(self.epi_p*len(all_combs)), self.max_epi]), 1])
 						selected_combs = all_combs[np.random.choice(len(all_combs), selected_comb_num, replace=False)]
-
-						self.W.append(np.column_stack([np.multiply(selected_X[:, idx[0]], selected_X[:, idx[1]]) for idx in selected_combs]))
+						new_nonlinear_relation = np.column_stack([np.multiply(selected_X[:, idx[0]], selected_X[:, idx[1]]) for idx in selected_combs])
 					# self.W.append(RFF_gpytorch(gamma=0.1, n_components=self.n_components, seed=i).fit_transform(self.X[:, indices]))
+					self.num_nonlinear_relations.append(new_nonlinear_relation.shape[1])
+					self.W.append(new_nonlinear_relation)
 					progbar.update(i+1)
 			else:
 				for i in np.arange(self.mask.shape[1]):
@@ -204,10 +205,12 @@ class BANNs(object):
 
 					selected_X = self.X[:, indices]
 					if (len(indices) <= 1):
-						self.W.append(selected_X)
+						new_nonlinear_relation = selected_X
 					else:
-						self.W.append(np.column_stack([np.multiply(selected_X[:, j], selected_X[:, (j+1)]) for j in np.arange(len(indices)-1)]))
+						new_nonlinear_relation  = np.column_stack([np.multiply(selected_X[:, j], selected_X[:, (j+1)]) for j in np.arange(len(indices)-1)])
 					# self.W.append(RFF_gpytorch(gamma=0.1, n_components=self.n_components, seed=i).fit_transform(self.X[:, indices]))
+					self.num_nonlinear_relations.append(new_nonlinear_relation.shape[1])
+					self.W.append(new_nonlinear_relation)
 					progbar.update(i+1)
 
 
